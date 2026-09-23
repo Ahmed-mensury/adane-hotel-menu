@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adane International Hotel — Digital Menu</title>
+<meta name="description" content="Browse the full Adane International Hotel menu — Ethiopian traditional dishes, breakfast, burgers, pizza, seafood, grills and more. Prices, photos and descriptions, updated live.">
+<meta property="og:title" content="Adane International Hotel — Digital Menu">
+<meta property="og:description" content="A premium digital menu for Adane International Hotel. Browse dishes by category, search, and see current prices.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍽️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to menu</a>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-pattern" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Digital Menu</p>
+    <h1 class="hero-title">Adane<br>International<br>Hotel</h1>
+    <p class="hero-tag">Ethiopian tradition, international flavor — one menu, thoughtfully served.</p>
+    <div class="hero-actions">
+      <a href="#main" class="btn btn-primary">Browse the menu</a>
+    </div>
+  </div>
+  <div class="hero-scroll" aria-hidden="true"><span></span></div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="menunav" id="menunav" aria-label="Menu categories">
+  <div class="menunav-top">
+    <a href="#top" class="menunav-brand">Adane</a>
+    <div class="menunav-search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m21 21-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input type="search" id="searchInput" placeholder="Search dishes… e.g. chicken" aria-label="Search the menu">
+      <button id="searchClear" class="search-clear" aria-label="Clear search" hidden>&times;</button>
+    </div>
+  </div>
+  <div class="menunav-cats" id="menunavCats" role="tablist" aria-label="Categories"></div>
+</nav>
+
+<main id="main">
+  <div id="searchStatus" class="search-status" hidden></div>
+  <div id="menuSections"></div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <h2 class="footer-brand">Adane International Hotel</h2>
+    <p class="footer-vat" id="vatNote">All prices are inclusive of 15% VAT and 10% Service Charge</p>
+    <p class="footer-note">Menu items, prices and photos are updated by our team and may change without notice.</p>
+  </div>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Back to top">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<!-- ===== ITEM MODAL ===== -->
+<div class="modal-backdrop" id="modalBackdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-image" id="modalImage"></div>
+    <div class="modal-body">
+      <p class="modal-category" id="modalCategory"></p>
+      <h3 id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <p class="modal-price" id="modalPrice"></p>
+    </div>
+  </div>
+</div>
+
+<div id="loadingState" class="loading-state">
+  <div class="loading-mark">A</div>
+  <p>Loading the menu…</p>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

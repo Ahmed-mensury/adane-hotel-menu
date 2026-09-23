@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Admin Dashboard — Adane International Hotel</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+<div class="app" id="app" hidden>
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">Adane<span>Admin</span></div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" data-view="overview">Dashboard</button>
+      <button class="nav-item" data-view="items">Menu Management</button>
+      <button class="nav-item" data-view="categories">Categories</button>
+      <button class="nav-item" data-view="settings">Settings</button>
+    </nav>
+    <div class="sidebar-foot">
+      <p id="adminEmail" class="admin-email"></p>
+      <button id="logoutBtn" class="btn-ghost">Log out</button>
+      <a href="/" target="_blank" class="view-site">View public menu ↗</a>
+    </div>
+  </aside>
+
+  <main class="content">
+
+    <!-- ===== OVERVIEW ===== -->
+    <section id="view-overview" class="view">
+      <h1>Dashboard</h1>
+      <p class="view-sub">A quick look at your menu.</p>
+      <div class="stat-grid">
+        <div class="stat-card"><span id="statTotal">–</span><label>Total menu items</label></div>
+        <div class="stat-card"><span id="statAvailable">–</span><label>Currently visible</label></div>
+        <div class="stat-card"><span id="statHidden">–</span><label>Hidden / unavailable</label></div>
+        <div class="stat-card"><span id="statCats">–</span><label>Categories</label></div>
+      </div>
+      <div class="panel">
+        <h2>How to update the menu</h2>
+        <ol class="howto">
+          <li>Go to <strong>Menu Management</strong>.</li>
+          <li>Find the dish, click <strong>Edit</strong>, change the price, description, photo or availability.</li>
+          <li>Click <strong>Save Changes</strong> — the public menu updates within seconds, automatically.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== ITEMS ===== -->
+    <section id="view-items" class="view" hidden>
+      <div class="view-head">
+        <div><h1>Menu Management</h1><p class="view-sub">Edit, hide or add dishes.</p></div>
+        <button class="btn-primary" id="addItemBtn">+ Add new item</button>
+      </div>
+      <div class="items-toolbar">
+        <input type="search" id="itemSearch" placeholder="Search items…">
+        <select id="itemCatFilter"><option value="all">All categories</option></select>
+        <select id="itemStatusFilter">
+          <option value="all">All statuses</option>
+          <option value="available">Available only</option>
+          <option value="hidden">Hidden only</option>
+        </select>
+      </div>
+      <div class="table-wrap">
+        <table class="items-table">
+          <thead><tr><th></th><th>Name</th><th>Category</th><th>Price (ETB)</th><th>Status</th><th></th></tr></thead>
+          <tbody id="itemsTbody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section id="view-categories" class="view" hidden>
+      <h1>Categories</h1>
+      <p class="view-sub">Add, rename or remove menu categories.</p>
+      <form id="addCatForm" class="inline-form">
+        <input type="text" id="newCatName" placeholder="New category name, e.g. Desserts" required>
+        <button class="btn-primary" type="submit">Add category</button>
+      </form>
+      <div id="catList" class="cat-list"></div>
+    </section>
+
+    <!-- ===== SETTINGS ===== -->
+    <section id="view-settings" class="view" hidden>
+      <h1>Settings</h1>
+      <p class="view-sub">General information shown on the public menu.</p>
+      <form id="settingsForm" class="panel form-grid">
+        <label>Hotel name<input type="text" id="setHotelName"></label>
+        <label>Tagline<input type="text" id="setTagline"></label>
+        <label>VAT / service charge note<input type="text" id="setVatNote"></label>
+        <label>Phone<input type="text" id="setPhone"></label>
+        <label>Address<input type="text" id="setAddress"></label>
+        <button class="btn-primary" type="submit">Save settings</button>
+        <p id="settingsSaved" class="save-confirm" hidden>Saved.</p>
+      </form>
+    </section>
+
+  </main>
+</div>
+
+<!-- ===== ITEM EDIT MODAL ===== -->
+<div class="modal-backdrop" id="itemModalBackdrop" hidden>
+  <div class="modal-box">
+    <button class="modal-x" id="itemModalClose">&times;</button>
+    <h2 id="itemModalTitle">Edit item</h2>
+    <form id="itemForm">
+      <input type="hidden" id="itemId">
+      <label>Name<input type="text" id="fName" required></label>
+      <label>Category
+        <select id="fCategory" required></select>
+      </label>
+      <label>Price (ETB)<input type="number" id="fPrice" min="0" step="1" required></label>
+      <label>Description / ingredients<textarea id="fDescription" rows="3"></textarea></label>
+      <label>Photo
+        <div class="image-row">
+          <div class="image-preview" id="fImagePreview">No image</div>
+          <div>
+            <input type="file" id="fImageFile" accept="image/png,image/jpeg,image/webp">
+            <p class="image-hint" id="fImageHint">Upload a JPG, PNG or WEBP photo (auto-optimized).</p>
+          </div>
+        </div>
+      </label>
+      <div class="form-row-inline">
+        <label class="checkbox-label"><input type="checkbox" id="fAvailable" checked> Available on public menu</label>
+        <label class="checkbox-label"><input type="checkbox" id="fPopular"> Mark as "Popular"</label>
+      </div>
+      <p id="itemFormError" class="form-error" hidden></p>
+      <div class="form-actions">
+        <button type="button" id="deleteItemBtn" class="btn-danger">Delete item</button>
+        <button type="submit" class="btn-primary">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="toast" class="toast" hidden></div>
+
+<script src="js/admin.js"></script>
+<script>AdaneAdmin.initDashboard();</script>
+</body>
+</html>

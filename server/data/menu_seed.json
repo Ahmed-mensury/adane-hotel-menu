@@ -1,0 +1,1902 @@
+[
+  {
+    "id": 1,
+    "category": "Burger",
+    "name": "Adane Special Burger",
+    "description": "meat, cheese, egg, mayonnaise, chicken",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 2,
+    "category": "Burger",
+    "name": "Beef Burger",
+    "description": "beef, lettuce, mayonnaise, chili, tomato, ketchup",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 3,
+    "category": "Burger",
+    "name": "Cheese Burger",
+    "description": "cheese, meat, lettuce, mayonnaise,chili, tomato",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 4,
+    "category": "Burger",
+    "name": "Chicken Burger",
+    "description": "cheese, chiken, lettuce, mayonnaise,chili, tomato",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 5,
+    "category": "Burger",
+    "name": "Double Burger",
+    "description": "meat, lettuce, mayonnaise, chili, tomato",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 6,
+    "category": "Sandwich",
+    "name": "Club Sandwich",
+    "description": "meat, boiled egg, chili, lettuce, mayonnaise",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 7,
+    "category": "Sandwich",
+    "name": "Egg Sandwich",
+    "description": "egg,salt, bread",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 8,
+    "category": "Sandwich",
+    "name": "Cheese Sandwich",
+    "description": "cheese, French Fries,chili, ketchup",
+    "price": 600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 9,
+    "category": "Sandwich",
+    "name": "Tuna Sandwich",
+    "description": "tuna, chili, soya, tomato, French Fries, ketchup",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 10,
+    "category": "Sandwich",
+    "name": "Chicken Sandwich",
+    "description": "chicken, chili, tomato, French Fries, ketchup",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 11,
+    "category": "Sandwich",
+    "name": "Vegetable Sandwich",
+    "description": "tomato, potato, cabbage, carrot, chili, ketchup",
+    "price": 380,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 12,
+    "category": "Sandwich",
+    "name": "Fish Sandwich",
+    "description": "melted cheese, chili, tomato, potato, fish, ketchup",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 13,
+    "category": "Sandwich",
+    "name": "Steak Sandwich",
+    "description": "meat, chili, mushroom, tomato, French Fries, ketch",
+    "price": 800,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 14,
+    "category": "Side Dish",
+    "name": "French Fries",
+    "description": "potato",
+    "price": 340,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 15,
+    "category": "Side Dish",
+    "name": "Cooked Vegetable",
+    "description": "potato, carrot, spinach, onion, cabbage",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 16,
+    "category": "Soup",
+    "name": "Mushroom Soup",
+    "description": "Mushroom, milk, table butter, milk",
+    "price": 500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 17,
+    "category": "Soup",
+    "name": "Chicken Cream Soup",
+    "description": "Chicken, floor, milk, table butter",
+    "price": 600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 18,
+    "category": "Soup",
+    "name": "Vegetable Cream Soup",
+    "description": "Grind vegetable, table butter, milk, and floor",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 19,
+    "category": "Soup",
+    "name": "Vegetable Soup",
+    "description": "Zucchini, vegetable, floor, legume, table butter",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 20,
+    "category": "Soup",
+    "name": "Tomato Soup",
+    "description": "Tomato paste, floor, table butter, bahiro, onion",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 21,
+    "category": "Soup",
+    "name": "Minestrone Soup",
+    "description": "Zucchini, vegetable, floor, legume, table butter",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 22,
+    "category": "Soup",
+    "name": "Hungarian Soup",
+    "description": "Vegetable, floor, penne, meat, table butter",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 23,
+    "category": "Soup",
+    "name": "Hot and sour soup",
+    "description": "Carrot, cabbage,onion ,garlic,acheto,chili,corn flour",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 24,
+    "category": "Soup",
+    "name": "Tomato and egg soup",
+    "description": "Tomato, egg, corn flour",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 25,
+    "category": "Soup",
+    "name": "Chicken corn soup",
+    "description": "Chicken, sweet corn, corn flour,egg",
+    "price": 500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 26,
+    "category": "Breakfast",
+    "name": "Adane Special Break Fast",
+    "description": "Juice, chechebsa, quanta firfir, scrambles egg",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 27,
+    "category": "Breakfast",
+    "name": "Full Break Fast",
+    "description": "Dish, toasted bread, jam, butter, hot drink & juice",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 28,
+    "category": "Breakfast",
+    "name": "Pan cakes",
+    "description": "Hot cakes served with syrup, jam/honey",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 29,
+    "category": "Breakfast",
+    "name": "French toast",
+    "description": "Sugar/honey, egg, milk, slice bread",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 30,
+    "category": "Breakfast",
+    "name": "Corn Flex",
+    "description": "Cereal, milk served with sugar or honey",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 31,
+    "category": "Breakfast",
+    "name": "Normal Full",
+    "description": "Cloven beans, green pepper, tomato, onion",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 32,
+    "category": "Breakfast",
+    "name": "Special Full",
+    "description": "Beans, meat, egg, green pepper, tomato, onion",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 33,
+    "category": "Breakfast",
+    "name": "Porraje / Oats",
+    "description": "Oats, milk served with sugar or honey",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 34,
+    "category": "Breakfast",
+    "name": "Fasting Fetira with Honey/MELAWA",
+    "description": "Served with honey",
+    "price": 330,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 35,
+    "category": "Breakfast",
+    "name": "Fetira with Egg & Honey",
+    "description": "Served with honey & egg",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 36,
+    "category": "Breakfast",
+    "name": "Omelet",
+    "description": "Egg, onion, tomato, green pepper",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 37,
+    "category": "Breakfast",
+    "name": "Special Omelet",
+    "description": "Vegetables, beef, egg, onion, cheese",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 38,
+    "category": "Breakfast",
+    "name": "Spanish omelet",
+    "description": "Spinach, egg, tomato, green pepper",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 39,
+    "category": "Breakfast",
+    "name": "Cheese Omelet",
+    "description": "Cheese, egg, onion, chili, tomato",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 40,
+    "category": "Breakfast",
+    "name": "Scrambled Egg",
+    "description": "Eggs, green pepper, tomato, onion",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 41,
+    "category": "Breakfast",
+    "name": "Scrambled Egg with Meat",
+    "description": "Eggs, green pepper, meat, tomato, onion",
+    "price": 500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 42,
+    "category": "Breakfast",
+    "name": "Continental Break Fast",
+    "description": "Bread, jam, butter, hot drink, juice",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 43,
+    "category": "Breakfast",
+    "name": "Chechebsa",
+    "description": "Floor, butter, red butter, honey",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 44,
+    "category": "Breakfast",
+    "name": "Tibs Firfir",
+    "description": "meat, injera, butter",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 45,
+    "category": "Breakfast",
+    "name": "Siga Firfir",
+    "description": "meat, injera, butter, red butter",
+    "price": 680,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 46,
+    "category": "Breakfast",
+    "name": "Quanta Firfir",
+    "description": "dried meat, injera, red pepper",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 47,
+    "category": "Breakfast",
+    "name": "Boiled Egg",
+    "description": "3 pcs boiled egg, chili, slice bread",
+    "price": 280,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 48,
+    "category": "Breakfast",
+    "name": "Fasting Kinche",
+    "description": "kinche, onion, salt, oil, bread",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 49,
+    "category": "Breakfast",
+    "name": "Kinche with Butter",
+    "description": "kinche, onion, salt, butter, bread",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 50,
+    "category": "Chicken",
+    "name": "Eskolap chicken/cutele",
+    "description": "Chicken, carry, black cardamom, garlic, egg, floor",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 51,
+    "category": "Chicken",
+    "name": "Crisp chicken/ Fried",
+    "description": "Chicken, carry, black cardamom, garlic, egg, floor",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 52,
+    "category": "Chicken",
+    "name": "Fried Chicken",
+    "description": "",
+    "price": 920,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 53,
+    "category": "Chicken",
+    "name": "Chicken Leg",
+    "description": "chicken, mushroom, milk",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 54,
+    "category": "Chicken",
+    "name": "Full Roasted Chicken",
+    "description": "chicken, soya, garlic, pepper",
+    "price": 2635,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 55,
+    "category": "Chicken",
+    "name": "Roasted Chicken",
+    "description": "chicken, soya, garlic, pepper",
+    "price": 1455,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 56,
+    "category": "Chicken",
+    "name": "Grilled Chicken",
+    "description": "Chicken, chicken carry, garlic, black cumin, salt, milk",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 57,
+    "category": "Chicken",
+    "name": "Chicken kebab",
+    "description": "Chicken, chili,soya, garlic,black pepper, tomato",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 58,
+    "category": "Chicken",
+    "name": "Chicken Tibs",
+    "description": "Chicken, chili, onion, garlic, green pepper, tomato",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 59,
+    "category": "Chicken",
+    "name": "Adane Special Chicken Tibs with rice",
+    "description": "Barbecue chicken - chicken meat, butter, onion, garlic",
+    "price": 990,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 60,
+    "category": "Chicken",
+    "name": "Shamiya/cofta grilled",
+    "description": "Chicken, masala, black cardamom, garlic",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 61,
+    "category": "Chicken",
+    "name": "Chicken biryani",
+    "description": "Chicken,onion,tomato,garlic, milk,kerfa,masala,red peper",
+    "price": 920,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 62,
+    "category": "Chicken",
+    "name": "Chicken keri",
+    "description": "Chicken, onion,tomato,garlic, milk,kerfa,meten masal",
+    "price": 920,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 63,
+    "category": "Chicken",
+    "name": "Chicken schezwan",
+    "description": "",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 64,
+    "category": "Chicken",
+    "name": "Chicken wing",
+    "description": "Chicken, garlic,soya souce,blak pepar",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 65,
+    "category": "Chicken",
+    "name": "Mixed fried rice",
+    "description": "Chicken, beef,vegtabel,egg, green pepar, garlic",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 66,
+    "category": "Chicken",
+    "name": "Shawarma/Chicken",
+    "description": "",
+    "price": 800,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 67,
+    "category": "Chicken",
+    "name": "Chicken Gorden Blue",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 68,
+    "category": "Chicken",
+    "name": "Stri Fried Chicken",
+    "description": "",
+    "price": 920,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 69,
+    "category": "Fish",
+    "name": "Grilled Fish",
+    "description": "fish, soya, wine, black pepper, garlic",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 70,
+    "category": "Fish",
+    "name": "Fish Gulash",
+    "description": "fish,tomato,hotsauce,soya,wine",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 71,
+    "category": "Fish",
+    "name": "Finger Fish",
+    "description": "fish,egg,flour,bread craps,soya,French Fries,ketchup",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 72,
+    "category": "Fish",
+    "name": "Stare Fried Fish with Vegetable",
+    "description": "fish,flour,veg,black pepper",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 73,
+    "category": "Fish",
+    "name": "Fish Cutlet",
+    "description": "fish, egg, bread craps, flour, soya",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 74,
+    "category": "Fish",
+    "name": "Fish dulet",
+    "description": "",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 75,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "ም ርጫ አንድ/Choice one Non Fasting",
+    "description": "ምንቸት በቀይ፣ ቋንጣ ወጥ፣ሸሮ በቂቤ፣ጎመን ጥብስ በስጋ፣ጥብስ ተፈርሾ በአልጫ፣የፍየል ጥብስ ፣አይብ፣ድንች በስጋ",
+    "price": 1800,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 76,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "ም ርጫ ሁለት/Choice two Non Fasting",
+    "description": "ምንቸት በቀይ፣ምንቸት በአልጫ፣ሸሮ በቂቤ፣ጥብስ፣ድንች በስጋ፣ዱለት፣ምስር በስጋ፣ጥብስ ተፈርሾ በአልጫ፣ቋንጣ ወጥ፣ጥብስ ተፈርሾ በቀይ፣ ጎመን ጥብስ በስጋ፣አይብ",
+    "price": 2900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 77,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "ምርጫ ሶስት/Choice three adane special Non Fasting",
+    "description": "ዝልዝል ጥብስ፣አፉና፣ክትፎ፣ጎረድ ጎረድ፣ጥብስ",
+    "price": 3900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 78,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Special Kitfo",
+    "description": "raw meat, butter, cabbage, cheese, chilli",
+    "price": 1200,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 79,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Zilzil Tibs",
+    "description": "meat, hot sauce, soya, butter",
+    "price": 1200,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 80,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Shiro with Butter",
+    "description": "beans powder, pepper, tomato, onion, butter",
+    "price": 420,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 81,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Shiro with Tuna",
+    "description": "tuna, beans, pepper, tomato, onion, butter",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 82,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Shiro Bozena",
+    "description": "meat, beans powder, pepper, tomato, onion",
+    "price": 580,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 83,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Mosob Non Fasting",
+    "description": "",
+    "price": 2600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 84,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Agelgel Non Fasting",
+    "description": "Meat, butter, boiled egg, ginger, garlic, chili,cabbage",
+    "price": 2200,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 85,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Kitfo Firfir",
+    "description": "meat, butter, chili",
+    "price": 980,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 86,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Shekila Tibes Half",
+    "description": "beef meat,butter, garlic, onion",
+    "price": 1200,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 87,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Shekila Tibes Full",
+    "description": "beef meat,butter, garlic, onion",
+    "price": 2200,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 88,
+    "category": "Ethiopian Traditional (Non-Fasting)",
+    "name": "Beef Chips",
+    "description": "beef meat,oil, pepper",
+    "price": 1100,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 89,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "ም ርጫ አንድ /Choice one Fasting",
+    "description": "ምስር፣ጎመን፣ድንች አልጫ፣ድፍን ምስር፣ሽምብራ አሳ፣ሽሮ፣ቲማቲም ቁረጥ፣ሱፍ፣",
+    "price": 1000,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 90,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "ም ርጫ ሁለት /Choice Two Fasting",
+    "description": "ምስር፣ጎመን፣ቡጥጫ፣ሽሮ፣ድፍን ምስር፣ድንች አልጫ፣ሽምብራ አሳ , ሱፍ፣ቲማቲም ቁርጥ፣አተር ክክ፣ፎሶሊያ፣ምስር አልጫ፣ሰላጣ",
+    "price": 1400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 91,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Misir Wot",
+    "description": "lentil, garlic, hot sauce, butter, ginger",
+    "price": 460,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 92,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Suf Fitfit",
+    "description": "beans powder, onion, ice, pepper, injera",
+    "price": 470,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 93,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Telba fitfet",
+    "description": "Flax, onion, ice, pepper, injera",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 94,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Shiro & mixed Salad",
+    "description": "ginger, mustard, pepper, tomato, onion,lutus",
+    "price": 490,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 95,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Mosob",
+    "description": "",
+    "price": 1700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 96,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Agelgel",
+    "description": "shero, alch wot, misir, ginger, garlic, chili, cabbag",
+    "price": 1500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 97,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Shiro Tegabino",
+    "description": "beans powder, pepper, tomato, onion",
+    "price": 520,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 98,
+    "category": "Ethiopian Traditional (Fasting)",
+    "name": "Tomato sauce/ቲማቲም ስልስ",
+    "description": "",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 99,
+    "category": "Beef",
+    "name": "BEEF Kebab",
+    "description": "beef, wine, soya, chili, tomato, onion",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 100,
+    "category": "Beef",
+    "name": "Roasted Beef",
+    "description": "beef, tomato, baro, garlic, masala",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 101,
+    "category": "Beef",
+    "name": "Beef Cutlet",
+    "description": "fillet beef, egg, soya, bread craps, floor",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 102,
+    "category": "Beef",
+    "name": "Beef Steak",
+    "description": "meat, slice tomato, onion, soya",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 103,
+    "category": "Beef",
+    "name": "Steak with Mushroom",
+    "description": "Meat, soya, black pepper, mushroom sauce",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 104,
+    "category": "Beef",
+    "name": "Pepper Steak",
+    "description": "meat, pepper, soya, hot sauce",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 105,
+    "category": "Beef",
+    "name": "Steak Ala Bismarck",
+    "description": "beef, garlic, black olive,  soya, egg",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 106,
+    "category": "Beef",
+    "name": "Beef Gulash",
+    "description": "beef, chili, soya, hot sauce",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 107,
+    "category": "Beef",
+    "name": "Combo",
+    "description": "Boiled beef, boiled goot,boiled chicken,fish coutlet served with vegtabel",
+    "price": 1400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 108,
+    "category": "Beef",
+    "name": "Filie tibes",
+    "description": "file meat, tomato, onion, garlic, chilies, butter",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 109,
+    "category": "Beef",
+    "name": "Adane special Beef tibes",
+    "description": "meat,onion,tomato,soya souce,paper,rice,egg,enjera",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 110,
+    "category": "Beef",
+    "name": "Beef Tibes",
+    "description": "Meat, onion, tomato, soya souce,green paper, served with rice / vegtabel",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 111,
+    "category": "Beef",
+    "name": "Beef Gordon Blue",
+    "description": "beef,cheese,egg,flour,bread craps",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 112,
+    "category": "Beef",
+    "name": "Eskolap beef",
+    "description": "Beef, masala, black cardamom, garlic, egg, black cumin, vinegar",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 113,
+    "category": "Beef",
+    "name": "Beef Cofta",
+    "description": "Beef, masala, black cardamom, garlic, tomato past, black cumin, vinegar",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 114,
+    "category": "Beef",
+    "name": "Beef shwarma",
+    "description": "Beef, masala, black cardamom, garlic, black cumin, vinegar",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 115,
+    "category": "Beef",
+    "name": "Beef stroganoff",
+    "description": "Beef,onion ,garlic,crem souce,musheroom",
+    "price": 870,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 116,
+    "category": "Goat",
+    "name": "Mendi",
+    "description": "goat meat, rice, carrot, cinnamon, garlic, tomato sauce",
+    "price": 1050,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 117,
+    "category": "Goat",
+    "name": "Goat Tibs",
+    "description": "goat meat, butter, tomato, onion, pimento, garlic",
+    "price": 880,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 118,
+    "category": "Goat",
+    "name": "Roasted Goat",
+    "description": "goat meat, wine, garlic, oil",
+    "price": 1050,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 119,
+    "category": "Goat",
+    "name": "Adane Special Goat Tibs",
+    "description": "Goat meat, butter, tomato, onion, pimento, garlic, rice",
+    "price": 980,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 120,
+    "category": "Goat",
+    "name": "Godden Tibs",
+    "description": "Goat meat & bone, butter, tomato, onion, pimento, garlic",
+    "price": 1050,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 121,
+    "category": "Goat",
+    "name": "Chevon Fitfit",
+    "description": "Goat meat, butter, onion, garlic,potato,karot,bahro",
+    "price": 880,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 122,
+    "category": "Goat",
+    "name": "Meten biryani",
+    "description": "Goat meat, onion,tomato,garlic, milk,kerfa,meten masala",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 123,
+    "category": "Goat",
+    "name": "Meten keri",
+    "description": "goat meat, onion,tomato,garlic, milk,kerfa,meten masala",
+    "price": 900,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 124,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with goat Tibs",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 125,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with Tuna",
+    "description": "tuna, tomato, soya, garlic, chili, onion",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 126,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with vegetable & Fish",
+    "description": "fish, vegetable, soya",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 127,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with bolognaise",
+    "description": "garlic, meat sauce, soya",
+    "price": 600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 128,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with Vegetable",
+    "description": "vegetables, onion, tomato",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 129,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with Tomato",
+    "description": "tomato sauce, soya, garlic",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 130,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with Tibs",
+    "description": "",
+    "price": 930,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 131,
+    "category": "Macaroni / Penne",
+    "name": "PENNE with Chicken",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 132,
+    "category": "Rice",
+    "name": "Rice with Tuna",
+    "description": "tuna, tomato, soya, garlic, chilli, onion",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 133,
+    "category": "Rice",
+    "name": "Rice with vegetable & Fish",
+    "description": "fish, vegetable, soya",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 134,
+    "category": "Rice",
+    "name": "Rice with bolognaise",
+    "description": "garlic, meat sauce, soya",
+    "price": 600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 135,
+    "category": "Rice",
+    "name": "Rice with Vegetable",
+    "description": "vegetables, onion, tomato",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 136,
+    "category": "Rice",
+    "name": "Rice with Tomato",
+    "description": "tomato sauce, soya, garlic",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 137,
+    "category": "Rice",
+    "name": "PlatE Rice",
+    "description": "",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 138,
+    "category": "Rice",
+    "name": "Rice with Tibs",
+    "description": "",
+    "price": 930,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 139,
+    "category": "Rice",
+    "name": "Rice with chicken",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 140,
+    "category": "Pizza",
+    "name": "Adane Special Pizza Large",
+    "description": "Cheese, beef, egg, chicken, tuna, black olive",
+    "price": 970,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 141,
+    "category": "Pizza",
+    "name": "Beef Pizza",
+    "description": "beef, mozzarella cheese, onion, chili, tomato, oregano",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 142,
+    "category": "Pizza",
+    "name": "Tuna Pizza",
+    "description": "tomato sauce, mozzarella cheese, tuna, chili, onion",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 143,
+    "category": "Pizza",
+    "name": "Chicken Pizza",
+    "description": "cheese, chicken, olive, tomato, oregano",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 144,
+    "category": "Pizza",
+    "name": "Margarita Pizza",
+    "description": "tomato sauce, mozzarella cheese, oregano",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 145,
+    "category": "Pizza",
+    "name": "Hawalian Pizza",
+    "description": "tomato sauce, mozzarella cheese, pine apple",
+    "price": 700,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 146,
+    "category": "Pizza",
+    "name": "Vegetable Pizza",
+    "description": "carrot, potato, cabbage, spinach, oregano",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 147,
+    "category": "Pizza",
+    "name": "Quarter Pizza",
+    "description": "mozzarella cheese, mushroom, tuna, beef, oregano",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 148,
+    "category": "Pizza",
+    "name": "Olive with Mushroom Pizza",
+    "description": "mozzarella cheese, olive, mushroom",
+    "price": 750,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 149,
+    "category": "Salad",
+    "name": "Adane Special Salad",
+    "description": "chicken, boiled egg, tuna, lettuce",
+    "price": 620,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 150,
+    "category": "Salad",
+    "name": "Mixed Salad",
+    "description": "vegetable, lettuce, mustard, vinegar",
+    "price": 360,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 151,
+    "category": "Salad",
+    "name": "Russian Salad",
+    "description": "vegetable, bean, mustard, mayonnaise",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 152,
+    "category": "Salad",
+    "name": "Tuna Salad",
+    "description": "tuna, onion, chili, tomato, lettuce",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 153,
+    "category": "Salad",
+    "name": "Chicken Salad",
+    "description": "lettuce, chicken, tomato, mayonnaise",
+    "price": 650,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 154,
+    "category": "Salad",
+    "name": "Beef Salad",
+    "description": "beef, onion, chili, tomato, mayonnaise",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 155,
+    "category": "Salad",
+    "name": "Mexician Salad",
+    "description": "tomato, chili, pineapple, vinegar, mayonnaise",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 156,
+    "category": "Salad",
+    "name": "Tomato Salad",
+    "description": "tomato, Chilli, Vinger, black pepper, lemon",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 157,
+    "category": "Salad",
+    "name": "Italian Salad",
+    "description": "lettuce, mayonnaise, cheese, potato",
+    "price": 500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 158,
+    "category": "Spaghetti",
+    "name": "Spaghetti with tibs",
+    "description": "",
+    "price": 930,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 159,
+    "category": "Spaghetti",
+    "name": "Spaghetti with goat tibs",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 160,
+    "category": "Spaghetti",
+    "name": "Spaghetti with Tuna",
+    "description": "tuna, tomato, soya, garlic, chilli, onion",
+    "price": 550,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 161,
+    "category": "Spaghetti",
+    "name": "Spaghetti with vegetable & Fish",
+    "description": "fish,vegetable, soya",
+    "price": 850,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 162,
+    "category": "Spaghetti",
+    "name": "Spaghetti with bolognaise",
+    "description": "garlic, meat, soya",
+    "price": 600,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 163,
+    "category": "Spaghetti",
+    "name": "Spaghetti with Vegetable",
+    "description": "vegetables, onion, tomato",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 164,
+    "category": "Spaghetti",
+    "name": "Spaghetti with Tomato",
+    "description": "tomato sauce, soya, garlic",
+    "price": 450,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 165,
+    "category": "Spaghetti",
+    "name": "Spaghetti with chicken",
+    "description": "",
+    "price": 950,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 166,
+    "category": "Spaghetti",
+    "name": "Lazagna with Meat",
+    "description": "flour, egg, meat sauce, cheese,milk",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 167,
+    "category": "Spaghetti",
+    "name": "Lazagna with Chicken Cream",
+    "description": "flour, egg, chicken, cheese, milk",
+    "price": 890,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 168,
+    "category": "Extra Items",
+    "name": "Take away Box",
+    "description": "",
+    "price": 100,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 169,
+    "category": "Extra Items",
+    "name": "Extra Bread or  Injera/ Catch",
+    "description": "up or shetni",
+    "price": 50,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 170,
+    "category": "Extra Items",
+    "name": "Extra Cheese",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 171,
+    "category": "Extra Items",
+    "name": "Extra Tuna",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 172,
+    "category": "Extra Items",
+    "name": "Take away food",
+    "description": "",
+    "price": 150,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 173,
+    "category": "Juice",
+    "name": "Special Juice",
+    "description": "",
+    "price": 420,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 174,
+    "category": "Juice",
+    "name": "Mango Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 175,
+    "category": "Juice",
+    "name": "Papaya Juice",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 176,
+    "category": "Juice",
+    "name": "Avocado Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 177,
+    "category": "Juice",
+    "name": "Mixed Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 178,
+    "category": "Juice",
+    "name": "Pineapple Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 179,
+    "category": "Juice",
+    "name": "Ambeshok Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 180,
+    "category": "Juice",
+    "name": "Lemon Juice",
+    "description": "",
+    "price": 320,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 181,
+    "category": "Juice",
+    "name": "Orange Juice",
+    "description": "",
+    "price": 390,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 182,
+    "category": "Juice",
+    "name": "Milk Shake Juice",
+    "description": "",
+    "price": 390,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 183,
+    "category": "Juice",
+    "name": "Fruit punch/Fruit Mixed",
+    "description": "",
+    "price": 350,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 184,
+    "category": "Juice",
+    "name": "Water Mellon Juice",
+    "description": "",
+    "price": 250,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 185,
+    "category": "Juice",
+    "name": "BANANA JUICE",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 186,
+    "category": "Juice",
+    "name": "MOJITO",
+    "description": "",
+    "price": 400,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 187,
+    "category": "Juice",
+    "name": "STRAWBERRY JUICE",
+    "description": "",
+    "price": 290,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 188,
+    "category": "Juice",
+    "name": "TELBA JUICE",
+    "description": "",
+    "price": 500,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 189,
+    "category": "Juice",
+    "name": "HABAB SLICE",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  },
+  {
+    "id": 190,
+    "category": "Juice",
+    "name": "PAPAYE SLICE",
+    "description": "",
+    "price": 300,
+    "image": "",
+    "available": true,
+    "popular": false
+  }
+]
