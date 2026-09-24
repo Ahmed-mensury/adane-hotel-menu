@@ -53,6 +53,20 @@ a{color:inherit}
 .view-sub{color:var(--text-soft); margin:0 0 24px}
 .view-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap}
 .view-head .btn-primary{width:auto; margin-top:0; padding:11px 20px}
+.view-head-actions{display:flex; gap:10px; flex-wrap:wrap}
+.btn-secondary{background:#fff; color:var(--text); border:1px solid var(--line); padding:11px 18px; border-radius:8px; cursor:pointer; font-weight:600; font-size:.9rem}
+.btn-secondary:hover{border-color:var(--gold)}
+
+.bulk-help{color:var(--text-soft); font-size:.88rem; line-height:1.6; margin:0 0 16px}
+.bulk-help code{background:var(--cream); padding:2px 6px; border-radius:4px; font-size:.82rem}
+#bulkFiles{width:100%; padding:10px; border:1px dashed var(--line); border-radius:8px; background:var(--cream)}
+.bulk-results{margin-top:18px; max-height:280px; overflow:auto}
+.bulk-row{display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid var(--line); font-size:.86rem}
+.bulk-row:last-child{border-bottom:none}
+.bulk-row .file{color:var(--text-soft)}
+.bulk-row .result.ok{color:var(--ok); font-weight:600}
+.bulk-row .result.fail{color:var(--danger); font-weight:600}
+.bulk-summary{font-weight:600; margin-top:14px; padding-top:10px; border-top:1px solid var(--line)}
 
 .stat-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:14px; margin-bottom:28px}
 .stat-card{background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px}
@@ -97,9 +111,6 @@ a{color:inherit}
 .save-confirm{color:var(--ok); font-weight:600; font-size:.85rem}
 
 /* ---------- Item modal ---------- */
-.modal-backdrop[hidden]{
-  display:none;
-}
 .modal-backdrop{position:fixed; inset:0; background:rgba(27,20,16,.55); display:flex; align-items:center; justify-content:center; z-index:100; padding:20px}
 .modal-box{background:#fff; border-radius:14px; width:100%; max-width:520px; max-height:90vh; overflow:auto; padding:28px; position:relative}
 .modal-x{position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--text-soft)}

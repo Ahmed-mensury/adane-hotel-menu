@@ -52,7 +52,10 @@
     <section id="view-items" class="view" hidden>
       <div class="view-head">
         <div><h1>Menu Management</h1><p class="view-sub">Edit, hide or add dishes.</p></div>
-        <button class="btn-primary" id="addItemBtn">+ Add new item</button>
+        <div class="view-head-actions">
+          <button class="btn-secondary" id="bulkUploadBtn">Bulk upload photos</button>
+          <button class="btn-primary" id="addItemBtn">+ Add new item</button>
+        </div>
       </div>
       <div class="items-toolbar">
         <input type="search" id="itemSearch" placeholder="Search items…">
@@ -98,6 +101,22 @@
     </section>
 
   </main>
+</div>
+
+<!-- ===== BULK PHOTO UPLOAD MODAL ===== -->
+<div class="modal-backdrop" id="bulkModalBackdrop" hidden>
+  <div class="modal-box">
+    <button class="modal-x" id="bulkModalClose">&times;</button>
+    <h2>Bulk upload photos</h2>
+    <p class="bulk-help">
+      Name each photo file after the dish it shows &mdash; e.g. <code>Beef Burger.jpg</code> or
+      <code>beef-burger.jpg</code> both match the item "Beef Burger". Select as many files as you like
+      (up to 60 at a time); each one is matched automatically and reported below.
+    </p>
+    <input type="file" id="bulkFiles" accept="image/png,image/jpeg,image/webp" multiple>
+    <button class="btn-primary" id="bulkUploadSubmit" style="margin-top:14px">Upload &amp; match</button>
+    <div id="bulkResults" class="bulk-results"></div>
+  </div>
 </div>
 
 <!-- ===== ITEM EDIT MODAL ===== -->

@@ -72,6 +72,7 @@ window.AdaneAdmin = (function () {
       wireSettingsForm();
       wireItemFilters();
       document.getElementById("addItemBtn").addEventListener("click", () => openItemModal(null));
+      wireBulkUpload();
       loadEverything();
     }
 
@@ -265,6 +266,63 @@ window.AdaneAdmin = (function () {
       const summary = await api.get("/api/admin/summary");
       renderSummary(summary);
       toast("Item deleted");
+    }
+
+    /* ---- bulk photo upload ---- */
+    function wireBulkUpload() {
+      document.getElementById("bulkUploadBtn").addEventListener("click", () => {
+        document.getElementById("bulkFiles").value = "";
+        document.getElementById("bulkResults").innerHTML = "";
+        document.getElementById("bulkModalBackdrop").hidden = false;
+      });
+      document.getElementById("bulkModalClose").addEventListener("click", () => {
+        document.getElementById("bulkModalBackdrop").hidden = true;
+      });
+      document.getElementById("bulkModalBackdrop").addEventListener("click", (e) => {
+        if (e.target.id === "bulkModalBackdrop") document.getElementById("bulkModalBackdrop").hidden = true;
+      });
+      document.getElementById("bulkUploadSubmit").addEventListener("click", async () => {
+        const input = document.getElementById("bulkFiles");
+        const files = input.files;
+        const resultsEl = document.getElementById("bulkResults");
+        if (!files || files.length === 0) {
+          resultsEl.innerHTML = `<p class="form-error">Choose one or more photo files first.</p>`;
+          return;
+        }
+        const btn = document.getElementById("bulkUploadSubmit");
+        btn.disabled = true;
+        btn.textContent = `Uploading ${files.length} photo${files.length === 1 ? "" : "s"}…`;
+        resultsEl.innerHTML = "";
+
+        const fd = new FormData();
+        Array.from(files).forEach((f) => fd.append("images", f));
+
+        try {
+          const res = await fetch("/api/admin/bulk-upload", { method: "POST", body: fd, credentials: "same-origin" });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.error || "Bulk upload failed");
+
+          let html = "";
+          data.matched.forEach((m) => {
+            html += `<div class="bulk-row"><span class="file">${esc(m.filename)}</span><span class="result ok">✓ matched to "${esc(m.itemName)}"</span></div>`;
+          });
+          data.unmatched.forEach((f) => {
+            html += `<div class="bulk-row"><span class="file">${esc(f)}</span><span class="result fail">✗ no matching item name</span></div>`;
+          });
+          html += `<div class="bulk-summary">${data.matched.length} photo${data.matched.length === 1 ? "" : "s"} applied, ${data.unmatched.length} unmatched</div>`;
+          resultsEl.innerHTML = html;
+
+          // refresh items so the table/thumbnails show the new photos immediately
+          items = await api.get("/api/admin/items");
+          renderItemsTable();
+          toast(`${data.matched.length} photo(s) uploaded and matched`);
+        } catch (err) {
+          resultsEl.innerHTML = `<p class="form-error">${esc(err.message)}</p>`;
+        } finally {
+          btn.disabled = false;
+          btn.textContent = "Upload & match";
+        }
+      });
     }
 
     /* ---- categories ---- */
