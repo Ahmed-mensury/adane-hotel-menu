@@ -57,7 +57,6 @@ router.put("/categories/:id", (req, res) => {
   const oldName = cat.name;
   if (req.body.name) cat.name = req.body.name.trim();
   if (typeof req.body.order === "number") cat.order = req.body.order;
-  // keep items pointing at the renamed category
   if (req.body.name && req.body.name.trim() !== oldName) {
     data.items.forEach((i) => {
       if (i.category === oldName) i.category = cat.name;
@@ -141,8 +140,6 @@ router.delete("/items/:id", (req, res) => {
 });
 
 // ---------- Image upload ----------
-// Resizes/optimizes on the server so the public menu always loads fast
-// images, regardless of what the manager uploads from their phone.
 router.post("/upload", upload.single("image"), async (req, res) => {
   try {
     if (!req.file) return res.status(400).json({ error: "No image file received" });
@@ -157,6 +154,60 @@ router.post("/upload", upload.single("image"), async (req, res) => {
     console.error(err);
     res.status(500).json({ error: "Image processing failed. Try a different image." });
   }
+});
+
+// ---------- Bulk image upload ----------
+function normalizeForMatch(s) {
+  return s
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/[^\p{L}\p{N} ]+/gu, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+router.post("/bulk-upload", upload.array("images", 60), async (req, res) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ error: "No image files received" });
+  }
+  const data = db.read();
+  const matched = [];
+  const unmatched = [];
+
+  const byName = new Map();
+  data.items.forEach((it) => byName.set(normalizeForMatch(it.name), it));
+
+  for (const file of req.files) {
+    const key = normalizeForMatch(file.originalname);
+    let item = byName.get(key);
+
+    if (!item) {
+      item = data.items.find((it) => {
+        const n = normalizeForMatch(it.name);
+        return n.includes(key) || key.includes(n);
+      });
+    }
+
+    if (!item) {
+      unmatched.push(file.originalname);
+      continue;
+    }
+
+    try {
+      const filename = `${Date.now()}-${crypto.randomBytes(4).toString("hex")}.webp`;
+      const outPath = path.join(UPLOAD_DIR, filename);
+      await sharp(file.buffer).resize(900, 700, { fit: "cover" }).webp({ quality: 78 }).toFile(outPath);
+      item.image = `/uploads/${filename}`;
+      matched.push({ filename: file.originalname, itemId: item.id, itemName: item.name });
+    } catch (err) {
+      console.error(err);
+      unmatched.push(file.originalname);
+    }
+  }
+
+  db.write(data);
+  res.json({ matched, unmatched });
 });
 
 // ---------- Settings ----------
