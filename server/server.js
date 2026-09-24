@@ -3,7 +3,6 @@ const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
 const fs = require("fs");
-const bcrypt = require("bcryptjs");
 
 const db = require("./db");
 const { requireAuth } = require("./middleware/auth");
@@ -21,48 +20,40 @@ if (!process.env.JWT_SECRET) {
 
 db.ensureDb();
 
-// ---------- Auto-seed the admin account on every startup ----------
-// On a plan without a persistent disk, db.json is recreated empty on every
-// restart/redeploy, which would otherwise wipe the admin login and require
-// manually running "npm run seed" via a Shell (a paid-plan feature). This
-// runs the same logic automatically, every time the server starts, using
-// ADMIN_EMAIL / ADMIN_PASSWORD from the environment. It's safe to run
-// repeatedly: it just makes sure that account exists with that password.
-function autoSeedAdmin() {
+// Auto-create the first admin account on startup if one doesn't exist yet.
+// This means the app works fully on hosts (like Render's free tier) that
+// don't offer shell/SSH access to run `npm run seed` manually. It only ever
+// creates an account when none exists yet — it never overwrites a login you
+// already created or changed.
+function ensureAdminAccount() {
+  const bcrypt = require("bcryptjs");
+  const data = db.read();
+  if (data.admins.length > 0) return; // an admin already exists, do nothing
+
   const email = process.env.ADMIN_EMAIL;
   const password = process.env.ADMIN_PASSWORD;
-
   if (!email || !password) {
     console.warn(
-      "\nADMIN_EMAIL / ADMIN_PASSWORD not set — skipping admin auto-seed. " +
-        "Set both in your environment variables to enable admin login.\n"
+      "\nNo admin account exists yet, and ADMIN_EMAIL/ADMIN_PASSWORD are not " +
+        "set, so one could not be created automatically. Set both in your " +
+        "environment variables and restart the service.\n"
     );
     return;
   }
   if (password.length < 8) {
-    console.warn("\nADMIN_PASSWORD should be at least 8 characters — skipping admin auto-seed.\n");
+    console.warn("\nADMIN_PASSWORD should be at least 8 characters. Admin account was not created.\n");
     return;
   }
-
-  const data = db.read();
-  const hash = bcrypt.hashSync(password, 12);
-  const existing = data.admins.find((a) => a.email === email);
-
-  if (existing) {
-    existing.passwordHash = hash;
-  } else {
-    data.admins.push({
-      id: Date.now(),
-      email,
-      passwordHash: hash,
-      createdAt: new Date().toISOString()
-    });
-  }
+  data.admins.push({
+    id: Date.now(),
+    email,
+    passwordHash: bcrypt.hashSync(password, 12),
+    createdAt: new Date().toISOString()
+  });
   db.write(data);
-  console.log(`Admin account ready: ${email}`);
+  console.log(`\nCreated admin account automatically: ${email}\n`);
 }
-
-autoSeedAdmin();
+ensureAdminAccount();
 
 const app = express();
 const PORT = process.env.PORT || 3000;

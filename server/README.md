@@ -54,12 +54,16 @@ Open `.env` in a text editor and fill in three things:
 - `ADMIN_EMAIL` — the email you'll use to log into the admin dashboard
 - `ADMIN_PASSWORD` — the password for that account (8+ characters)
 
-Then create your first admin account and start the server:
+Then start the server:
 
 ```bash
-npm run seed
 npm start
 ```
+
+The first time it starts, it automatically creates your admin account from
+`ADMIN_EMAIL`/`ADMIN_PASSWORD` in `.env` — no separate seed step needed. (If
+you're curious, `npm run seed` still exists too, and is handy if you ever
+want to change the admin password later while the server keeps running.)
 
 - Public menu: **http://localhost:3000**
 - Admin dashboard: **http://localhost:3000/admin/login.html**
@@ -80,6 +84,13 @@ The public menu shows the update within a few seconds — nobody needs to
 touch code, redeploy, or contact the developer.
 
 Other things the dashboard can do:
+- **Bulk upload photos** — the button next to "Add new item" in Menu Management.
+  Select multiple photo files at once; each one is matched to a menu item
+  automatically by its filename (e.g. `Beef Burger.jpg` or `beef-burger.jpg`
+  both match the item "Beef Burger"). A results list shows which photos
+  matched and which didn't, so nothing silently fails. Great for working
+  through a folder of sourced/photographed dishes in one go instead of
+  uploading them one at a time.
 - **Add new item** — the blue button at the top of Menu Management.
 - **Hide an item temporarily** instead of deleting it — click **Hide** in the
   item's row. Hidden items stay in the system but disappear from the public
