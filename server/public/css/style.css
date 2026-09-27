@@ -214,6 +214,9 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
 /* ============================================================
    MODAL
    ============================================================ */
+   .modal-backdrop[hidden]{
+  display:none;
+}
 .modal-backdrop{
   position:fixed; inset:0; background:rgba(27,20,16,.6); backdrop-filter:blur(4px);
   display:flex; align-items:flex-end; justify-content:center; z-index:100;
