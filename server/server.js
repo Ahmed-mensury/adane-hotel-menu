@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const path = require("path");
-const fs = require("fs");
 
 const db = require("./db");
 const { requireAuth } = require("./middleware/auth");
@@ -18,25 +17,20 @@ if (!process.env.JWT_SECRET) {
   process.exit(1);
 }
 
-db.ensureDb();
-
-// Auto-create the first admin account on startup if one doesn't exist yet.
-// This means the app works fully on hosts (like Render's free tier) that
-// don't offer shell/SSH access to run `npm run seed` manually. It only ever
-// creates an account when none exists yet — it never overwrites a login you
-// already created or changed.
-function ensureAdminAccount() {
+// Auto-create the first admin account if one doesn't exist yet, using
+// ADMIN_EMAIL/ADMIN_PASSWORD from the environment. Only ever creates an
+// account when none exists — never overwrites a login you already changed.
+async function ensureAdminAccount() {
   const bcrypt = require("bcryptjs");
-  const data = db.read();
-  if (data.admins.length > 0) return; // an admin already exists, do nothing
+  const data = await db.read();
+  if (data.admins.length > 0) return;
 
   const email = process.env.ADMIN_EMAIL;
   const password = process.env.ADMIN_PASSWORD;
   if (!email || !password) {
     console.warn(
       "\nNo admin account exists yet, and ADMIN_EMAIL/ADMIN_PASSWORD are not " +
-        "set, so one could not be created automatically. Set both in your " +
-        "environment variables and restart the service.\n"
+        "set, so one could not be created automatically.\n"
     );
     return;
   }
@@ -50,10 +44,9 @@ function ensureAdminAccount() {
     passwordHash: bcrypt.hashSync(password, 12),
     createdAt: new Date().toISOString()
   });
-  db.write(data);
+  await db.write(data);
   console.log(`\nCreated admin account automatically: ${email}\n`);
 }
-ensureAdminAccount();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -62,6 +55,31 @@ app.set("trust proxy", 1);
 app.use(express.json({ limit: "1mb" }));
 app.use(cookieParser());
 
+// ---------- One-time setup, run lazily on first request ----------
+// Works identically whether the app is a traditional always-on server
+// (Render, a VPS, etc. — setup runs once at startup) or a serverless
+// function that spins up fresh per request (Vercel — setup runs once per
+// cold start, memoized so it's not repeated on every request in the same
+// warm instance).
+let readyPromise = null;
+function ensureReady() {
+  if (!readyPromise) {
+    readyPromise = (async () => {
+      await db.ensureDb();
+      await ensureAdminAccount();
+    })();
+  }
+  return readyPromise;
+}
+app.use((req, res, next) => {
+  ensureReady()
+    .then(() => next())
+    .catch((err) => {
+      console.error("Startup check failed:", err.message);
+      res.status(500).send("The server is temporarily unavailable. Please try again shortly.");
+    });
+});
+
 // ---------- Public API ----------
 app.use("/api", menuRoutes);
 app.use("/api/auth", authRoutes);
@@ -69,15 +87,12 @@ app.use("/api/auth", authRoutes);
 // ---------- Protected admin API ----------
 app.use("/api/admin", requireAuth, adminRoutes);
 
-// ---------- Uploaded images ----------
-app.use("/uploads", express.static(path.join(__dirname, "uploads"), { maxAge: "30d" }));
-
 // ---------- Static sites ----------
-// Public customer-facing menu
+// Public customer-facing menu. (Uploaded photos are not served from here —
+// they live on Supabase Storage and are linked to directly.)
 app.use(express.static(path.join(__dirname, "public")));
 // Admin dashboard (the pages themselves are static; every API call they make
-// is protected separately by requireAuth above, so simply loading these HTML
-// files does not expose any menu data)
+// is protected separately by requireAuth above)
 app.use("/admin", express.static(path.join(__dirname, "admin")));
 
 app.get("/", (req, res) => {
@@ -88,7 +103,15 @@ app.use((req, res) => {
   res.status(404).send("Not found");
 });
 
-app.listen(PORT, () => {
-  console.log(`\nAdane International Hotel menu running at http://localhost:${PORT}`);
-  console.log(`Admin dashboard at        http://localhost:${PORT}/admin/login.html\n`);
-});
+// Only start a traditional listening server when this file is run directly
+// (e.g. `npm start` on Render, a VPS, or your own machine). On Vercel, this
+// file is instead `require`d by api/index.js, which just needs the `app`
+// object below — Vercel handles starting/stopping instances itself.
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\nAdane International Hotel menu running at http://localhost:${PORT}`);
+    console.log(`Admin dashboard at        http://localhost:${PORT}/admin/login.html\n`);
+  });
+}
+
+module.exports = app;

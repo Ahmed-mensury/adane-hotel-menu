@@ -20,7 +20,7 @@ function recordAttempt(ip) {
   rateLimitMap.set(ip, rec);
 }
 
-router.post("/login", (req, res) => {
+router.post("/login", async (req, res) => {
   const ip = req.ip;
   if (tooManyAttempts(ip)) {
     return res.status(429).json({ error: "Too many attempts. Please wait a few minutes and try again." });
@@ -29,20 +29,25 @@ router.post("/login", (req, res) => {
   if (!email || !password) {
     return res.status(400).json({ error: "Email and password are required" });
   }
-  const data = db.read();
-  const admin = data.admins.find((a) => a.email.toLowerCase() === String(email).toLowerCase());
-  if (!admin) {
-    recordAttempt(ip);
-    return res.status(401).json({ error: "Invalid email or password" });
+  try {
+    const data = await db.read();
+    const admin = data.admins.find((a) => a.email.toLowerCase() === String(email).toLowerCase());
+    if (!admin) {
+      recordAttempt(ip);
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+    const ok = bcrypt.compareSync(password, admin.passwordHash);
+    if (!ok) {
+      recordAttempt(ip);
+      return res.status(401).json({ error: "Invalid email or password" });
+    }
+    const token = signToken(admin);
+    setAuthCookie(res, token);
+    res.json({ ok: true, email: admin.email });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Login is temporarily unavailable. Please try again shortly." });
   }
-  const ok = bcrypt.compareSync(password, admin.passwordHash);
-  if (!ok) {
-    recordAttempt(ip);
-    return res.status(401).json({ error: "Invalid email or password" });
-  }
-  const token = signToken(admin);
-  setAuthCookie(res, token);
-  res.json({ ok: true, email: admin.email });
 });
 
 router.post("/logout", (req, res) => {
