@@ -138,7 +138,46 @@
     document.body.style.overflow = "";
   }
 
+  // Click-and-drag (and touch-swipe) scrolling for the category row, so
+  // people can grab it with a mouse and drag left/right instead of having
+  // to use a scrollbar or trackpad gesture.
+  function wireDragScroll(el) {
+    let isDown = false;
+    let dragged = false;
+    let startX = 0;
+    let startScroll = 0;
+
+    el.addEventListener("pointerdown", (e) => {
+      isDown = true;
+      dragged = false;
+      startX = e.clientX;
+      startScroll = el.scrollLeft;
+      el.setPointerCapture(e.pointerId);
+    });
+    el.addEventListener("pointermove", (e) => {
+      if (!isDown) return;
+      const delta = e.clientX - startX;
+      if (Math.abs(delta) > 5 && !dragged) {
+        dragged = true;
+        el.classList.add("dragging");
+      }
+      if (dragged) el.scrollLeft = startScroll - delta;
+    });
+    function endDrag() {
+      isDown = false;
+      // Remove the dragging class on the next tick so the click handler
+      // (which checks e.target) still sees pills as non-interactive for
+      // this one release, preventing an accidental category switch.
+      setTimeout(() => el.classList.remove("dragging"), 0);
+    }
+    el.addEventListener("pointerup", endDrag);
+    el.addEventListener("pointercancel", endDrag);
+    el.addEventListener("pointerleave", () => { if (isDown) endDrag(); });
+  }
+
   function wireEvents() {
+    wireDragScroll(els.menunavCats);
+
     els.menunavCats.addEventListener("click", (e) => {
       const btn = e.target.closest(".cat-pill");
       if (!btn) return;

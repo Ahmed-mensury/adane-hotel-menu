@@ -64,10 +64,16 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
 }
 .hero-bg{
   position:absolute; inset:0;
+  /* If img/hero-bg.jpg exists, it shows through; the gradients on top keep
+     the text readable over any photo. If the file is missing, the browser
+     just shows the gradients alone — nothing breaks either way. */
   background:
     radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,161,90,.20), transparent 60%),
     radial-gradient(ellipse 80% 60% at 80% 100%, rgba(122,36,48,.35), transparent 60%),
-    linear-gradient(160deg, #1B1410 0%, #241A14 55%, #17110D 100%);
+    linear-gradient(160deg, rgba(27,20,16,.88) 0%, rgba(36,26,20,.82) 55%, rgba(23,17,13,.90) 100%),
+    url('../img/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
 .hero-pattern{
   position:absolute; left:0; right:0; bottom:0; height:64px;
@@ -129,9 +135,11 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
   max-width:1180px; margin:0 auto; padding:12px 20px 10px;
 }
 .menunav-brand{
+  display:flex; align-items:center;
   font-family:var(--font-display); font-weight:600; color:var(--wine);
   text-decoration:none; font-size:1.1rem; flex-shrink:0; letter-spacing:.01em;
 }
+.menunav-logo{ height:36px; width:auto; display:block; }
 .menunav-search{
   flex:1; display:flex; align-items:center; gap:8px;
   background:var(--paper); border:1px solid var(--line); border-radius:999px;
@@ -148,7 +156,10 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
 .menunav-cats{
   display:flex; gap:8px; overflow-x:auto; padding:0 20px 14px;
   max-width:1180px; margin:0 auto; scrollbar-width:none;
+  cursor:grab;
 }
+.menunav-cats.dragging{ cursor:grabbing; user-select:none; scroll-snap-type:none; }
+.menunav-cats.dragging .cat-pill{ pointer-events:none; }
 .menunav-cats::-webkit-scrollbar{display:none}
 .cat-pill{
   flex-shrink:0; border:1px solid var(--line); background:var(--paper); color:var(--text-soft);
