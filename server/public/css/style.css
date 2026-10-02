@@ -139,7 +139,8 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
   font-family:var(--font-display); font-weight:600; color:var(--wine);
   text-decoration:none; font-size:1.1rem; flex-shrink:0; letter-spacing:.01em;
 }
-.menunav-logo{ height:36px; width:auto; display:block; }
+.hero-logo-link{position:absolute; top:calc(16px + env(safe-area-inset-top,0px)); left:18px; z-index:5; display:block; line-height:0}
+.hero-logo{height:46px; width:auto; display:block; opacity:.92; filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
 .menunav-search{
   flex:1; display:flex; align-items:center; gap:8px;
   background:var(--paper); border:1px solid var(--line); border-radius:999px;
@@ -159,7 +160,7 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
   cursor:grab;
 }
 .menunav-cats.dragging{ cursor:grabbing; user-select:none; scroll-snap-type:none; }
-.menunav-cats.dragging .cat-pill{ pointer-events:none; }
+.menunav-cats{ touch-action:pan-x; -webkit-overflow-scrolling:touch; }
 .menunav-cats::-webkit-scrollbar{display:none}
 .cat-pill{
   flex-shrink:0; border:1px solid var(--line); background:var(--paper); color:var(--text-soft);
@@ -295,8 +296,8 @@ h1,h2,h3{font-family:var(--font-display); margin:0}
    ============================================================ */
 @media (max-width:640px){
   .menunav-top{flex-wrap:wrap}
-  .menunav-search{max-width:none; width:100%; order:3; margin-left:0}
-  .menunav-brand{order:1}
+  .menunav-search{max-width:none; width:100%; margin-left:0}
+  .hero-logo{height:40px}
   .grid{grid-template-columns:repeat(auto-fill, minmax(150px,1fr)); gap:12px}
   .card-body{padding:11px 12px 13px}
   .card-name{font-size:.95rem}

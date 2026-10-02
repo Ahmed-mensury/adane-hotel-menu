@@ -142,43 +142,33 @@
   // people can grab it with a mouse and drag left/right instead of having
   // to use a scrollbar or trackpad gesture.
   function wireDragScroll(el) {
-    let isDown = false;
-    let dragged = false;
-    let startX = 0;
-    let startScroll = 0;
-
-    el.addEventListener("pointerdown", (e) => {
-      isDown = true;
-      dragged = false;
-      startX = e.clientX;
-      startScroll = el.scrollLeft;
-      el.setPointerCapture(e.pointerId);
+    // Mouse-only drag scrolling. Touch uses the browser's native swipe, and
+    // we never capture the pointer, so taps/clicks on pills keep working.
+    let isDown = false, startX = 0, startScroll = 0;
+    el._justDragged = false;
+    el.addEventListener("mousedown", (e) => {
+      isDown = true; el._justDragged = false;
+      startX = e.clientX; startScroll = el.scrollLeft;
     });
-    el.addEventListener("pointermove", (e) => {
+    window.addEventListener("mousemove", (e) => {
       if (!isDown) return;
       const delta = e.clientX - startX;
-      if (Math.abs(delta) > 5 && !dragged) {
-        dragged = true;
-        el.classList.add("dragging");
-      }
-      if (dragged) el.scrollLeft = startScroll - delta;
+      if (Math.abs(delta) > 5) { el._justDragged = true; el.classList.add("dragging"); }
+      if (el._justDragged) el.scrollLeft = startScroll - delta;
     });
-    function endDrag() {
+    window.addEventListener("mouseup", () => {
+      if (!isDown) return;
       isDown = false;
-      // Remove the dragging class on the next tick so the click handler
-      // (which checks e.target) still sees pills as non-interactive for
-      // this one release, preventing an accidental category switch.
-      setTimeout(() => el.classList.remove("dragging"), 0);
-    }
-    el.addEventListener("pointerup", endDrag);
-    el.addEventListener("pointercancel", endDrag);
-    el.addEventListener("pointerleave", () => { if (isDown) endDrag(); });
+      el.classList.remove("dragging");
+      setTimeout(() => { el._justDragged = false; }, 0);
+    });
   }
 
   function wireEvents() {
     wireDragScroll(els.menunavCats);
 
     els.menunavCats.addEventListener("click", (e) => {
+      if (els.menunavCats._justDragged) return;
       const btn = e.target.closest(".cat-pill");
       if (!btn) return;
       state.activeCat = btn.dataset.cat;
